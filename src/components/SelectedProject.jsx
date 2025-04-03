@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteProjectById, selectProject } from '../store/project-actions';  // Yorum satırından çıkarılmalı
+import { toast } from 'react-toastify';
+import Tasks from './Tasks';
 
 const SelectedProject = () => {
     const dispatch = useDispatch();
@@ -13,6 +15,7 @@ const SelectedProject = () => {
         if (selectedProject) {
             dispatch(deleteProjectById(selectedProject.id));
             dispatch(selectProject(undefined));
+            toast.success("Project Deleted");
         }
     };
 
@@ -36,7 +39,7 @@ const SelectedProject = () => {
                 <p className='mb-4 text-slate-700'>{selectedProject.date}</p>
                 <p className='text-slate-600 whitespace-pre-wrap'>{selectedProject.description}</p>
             </header>
-            <div>Tasks</div>
+            <Tasks tasks={selectedProject.tasks} />
         </div>
     );
 };

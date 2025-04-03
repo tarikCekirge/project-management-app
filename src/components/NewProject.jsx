@@ -15,7 +15,7 @@ const NewProject = () => {
     } = useForm({ mode: "onChange" });
 
     const onSubmit = (data) => {
-        const newProject = { ...data, id: Date.now() };
+        const newProject = { ...data, id: Date.now(), tasks: [] };
         dispatch(addNewProject(newProject));
         toast.success("Project created successfully! 🎉");
         reset();
