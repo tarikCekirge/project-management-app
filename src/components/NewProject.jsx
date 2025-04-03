@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Input from "./Input";
 import { useDispatch } from "react-redux";
-import { addNewProject } from "../store/project-actions";
+import { addNewProject, selectProject } from "../store/project-actions";
 import { toast } from "react-toastify";
 
 const NewProject = () => {
@@ -18,7 +18,8 @@ const NewProject = () => {
         const newProject = { ...data, id: Date.now() };
         dispatch(addNewProject(newProject));
         toast.success("Project created successfully! 🎉");
-        reset()
+        reset();
+        dispatch(selectProject(undefined));
     };
 
     return (

@@ -5,5 +5,5 @@ export const selectProject = (project) => (dispatch) => {
 };
 
 export const addNewProject = (project) => (dispatch) => {
-    dispatch(projectActions.addProject(project))
+    dispatch(projectActions.addProject(project));
 }
