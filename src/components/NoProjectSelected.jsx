@@ -2,12 +2,13 @@ import React from 'react'
 import noProject from '../assets/no-projects.png'
 import Button from './Button'
 import { useDispatch } from 'react-redux'
-import { projectActions } from '../store/project-slice'
+import { selectProject } from "../store/project-actions";
+
 
 const NoProjectSelected = () => {
     const dispatch = useDispatch()
     const handleNewProject = () => {
-        dispatch(projectActions.setSelectedProject(null));
+        dispatch(selectProject(null));
     };
     return (
         <div className='mt-2 text-center w-2/3'>

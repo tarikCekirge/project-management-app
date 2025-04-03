@@ -3,6 +3,7 @@ import ProjectSideBar from './components/ProjectSideBar'
 import NewProject from './components/NewProject'
 import NoProjectSelected from './components/NoProjectSelected'
 import { useSelector } from 'react-redux'
+import { ToastContainer } from 'react-toastify'
 
 const App = () => {
   const selectedProject = useSelector(state => state.selectedProject)
@@ -19,6 +20,7 @@ const App = () => {
 
 
       </main>
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
   )
 }
