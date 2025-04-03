@@ -6,4 +6,12 @@ export const selectProject = (project) => (dispatch) => {
 
 export const addNewProject = (project) => (dispatch) => {
     dispatch(projectActions.addProject(project));
-}
+};
+
+export const updateExistingProject = (id, data) => (dispatch) => {
+    dispatch(projectActions.updateProject({ id, data }));
+};
+
+export const deleteProjectById = (id) => (dispatch) => {
+    dispatch(projectActions.deleteProject(id));
+};

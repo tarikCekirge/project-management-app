@@ -22,11 +22,18 @@ const NewProject = () => {
         dispatch(selectProject(undefined));
     };
 
+    const handleCancelAddProject = () => {
+        toast.info("Project Canceled");
+        reset();
+        dispatch(selectProject(undefined));
+    }
+
+
     return (
         <div className="w-[35rem] mt-16">
             <menu className="flex items-center justify-end gap-4 my-4">
                 <li>
-                    <button className="text-stone-800 hover:text-stone-950 cursor-pointer">
+                    <button onClick={handleCancelAddProject} className="text-stone-800 hover:text-stone-950 cursor-pointer">
                         Cancel
                     </button>
                 </li>
