@@ -15,3 +15,11 @@ export const updateExistingProject = (id, data) => (dispatch) => {
 export const deleteProjectById = (id) => (dispatch) => {
     dispatch(projectActions.deleteProject(id));
 };
+
+export const addTaskToProject = (projectId, task) => (dispatch) => {
+    dispatch(projectActions.addTaskToProject({ projectId, task }));
+};
+
+export const deleteTaskFromProject = (projectId, taskId) => (dispatch) => {
+    dispatch(projectActions.deleteTaskFromProject({ projectId, taskId }));
+};
